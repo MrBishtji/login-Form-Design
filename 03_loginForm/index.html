@@ -90,15 +90,6 @@
       font-weight: 600;
     }
 
-    /* .bgcolor {
-      position: relative;
-      width: 400px;
-      height: 440px;
-      border-radius: 20px;
-      background: #d5d9de2f;
-       display: none;
-    } */
-
     .wrapper {
       position: relative;
       width: 400px;
@@ -113,11 +104,13 @@
       justify-content: center;
       overflow: hidden;
       transform: scale(0);
-      transition: transform 0.4s ease,height 0.2s ease, width 0.2s ease-in-out;
+      transition: transform 0.4s ease, height 0.2s ease, width 0.2s ease-in-out;
     }
-.wrapper.active-popup{
-  transform: scale(1);
-}
+
+    .wrapper.active-popup {
+      transform: scale(1);
+    }
+
     .wrapper .icon-close {
       position: absolute;
       top: 0;
@@ -287,108 +280,107 @@
         <button class="login-popup">Login</button>
       </nav>
     </header>
-    <div class="bgcolor">
-      <div class="wrapper">
-        <span class="icon-close">
-          <ion-icon name="close-outline"></ion-icon>
-        </span>
+    <div class="wrapper">
+      <span class="icon-close">
+        <ion-icon name="close-outline"></ion-icon>
+      </span>
 
-        <div class="form-box login">
-          <h2>Login</h2>
-          <form>
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="mail"></ion-icon>
-              </span>
-              <input type="email" required>
-              <label for="email">Email</label>
-            </div>
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="mail"></ion-icon>
+            </span>
+            <input type="email" required>
+            <label for="email">Email</label>
+          </div>
 
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="lock-closed"></ion-icon>
-              </span>
-              <input type="password" required>
-              <label for="password">Password</label>
-            </div>
-            <div class="remember-forgot">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-              <a href="#">Forgot Password ?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="login-register">
-              <p>Don't have an account?<a href="#" class="register-link"> Register</a></p>
-            </div>
-          </form>
-        </div>
-
-
-        <div class="form-box register">
-          <h2>Registration</h2>
-          <form>
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="person"></ion-icon>
-              </span>
-              <input type="text" required>
-              <label for="text">Username</label>
-            </div>
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="mail"></ion-icon>
-              </span>
-              <input type="email" required>
-              <label for="email">Email</label>
-            </div>
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="lock-closed"></ion-icon>
-              </span>
-              <input type="password" required>
-              <label for="password">Password</label>
-            </div>
-
-            <div class="remember-forgot">
-              <label>
-                <input type="checkbox"> I agree to the terms and conditions
-              </label>
-            </div>
-            <button type="submit" class="btn">Register</button>
-            <div class="login-register">
-              <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-            </div>
-          </form>
-        </div>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" required>
+            <label for="password">Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#">Forgot Password ?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="login-register">
+            <p>Don't have an account?<a href="#" class="register-link"> Register</a></p>
+          </div>
+        </form>
       </div>
 
-      <script>
-        const wrapper = document.querySelector(".wrapper")
-        const login = document.querySelector(".login-link")
-        const register = document.querySelector(".register-link")
-        const btnPopup = document.querySelector(".login-popup")
-        const closePop = document.querySelector(".icon-close")
 
-        register.addEventListener("click", () => {
-          wrapper.classList.add("active")
+      <div class="form-box register">
+        <h2>Registration</h2>
+        <form>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="person"></ion-icon>
+            </span>
+            <input type="text" required>
+            <label for="text">Username</label>
+          </div>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="mail"></ion-icon>
+            </span>
+            <input type="email" required>
+            <label for="email">Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" required>
+            <label for="password">Password</label>
+          </div>
 
-        })
-        login.addEventListener("click", () => {
-          wrapper.classList.remove("active")
-        })
+          <div class="remember-forgot">
+            <label>
+              <input type="checkbox"> I agree to the terms and conditions
+            </label>
+          </div>
+          <button type="submit" class="btn">Register</button>
+          <div class="login-register">
+            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <script>
+      const wrapper = document.querySelector(".wrapper")
+      const login = document.querySelector(".login-link")
+      const register = document.querySelector(".register-link")
+      const btnPopup = document.querySelector(".login-popup")
+      const closePop = document.querySelector(".icon-close")
 
-         btnPopup.addEventListener("click", () => {
-            wrapper.classList.add("active-popup")
+      register.addEventListener("click", () => {
+        wrapper.classList.add("active")
 
-          })
-         closePop.addEventListener("click", () => {
-            wrapper.classList.remove("active-popup")
+      })
+      login.addEventListener("click", () => {
+        wrapper.classList.remove("active")
+      })
 
-          })
-      </script>
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      btnPopup.addEventListener("click", () => {
+        wrapper.classList.add("active-popup")
+
+      })
+      closePop.addEventListener("click", () => {
+        wrapper.classList.remove("active-popup")
+
+      })
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
