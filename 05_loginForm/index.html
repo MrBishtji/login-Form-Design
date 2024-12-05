@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins",sans-serif;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background:#2b0404;
+    }
+    .wrapper{
+      position: relative;
+      width: 256px;
+      height: 256px;
+      /* background: #243a1f; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .wrapper  span{
+      position: absolute;
+      left: 0;
+      width: 32px;
+      height: 6px;
+      background: #622e27;
+      border-radius: 8px;
+      transform-origin: 128px;
+      transform: scale(2.2) rotate(calc(var(--i)*(360deg/50)));
+      animation:animateBlink 3s linear infinite ;
+      animation-delay: calc(var(--i)*(3s/50));
+    }
+
+    @keyframes animateBlink {
+      0%{
+        background: #ff2f00;
+      }
+      25%{
+        background: #622e27;
+      }
+    }
+
+    .login-form{
+      position: absolute;
+      /* background: #40581d; */
+      width: 400px;
+    }
+    .login-form form{
+      width: 100%;
+      padding: 0 50px;
+    }
+     h2{
+      text-align: center;
+      font-size: 2em;
+      color: #ff2f00;
+    }
+    .input-box{
+      position: relative;
+      margin: 25px 0;
+    }
+    .input-box input{
+      width: 100%;
+      height: 50px;
+      background: transparent;
+      border: 3px solid #622e27;
+      color: #fff;
+      outline: none;
+      font-size: 1em;
+      padding: 0 20px;
+      border-radius: 40px;
+    }
+
+    .input-box input:focus,.input-box input:valid{
+      border-color:#ff0000 ;
+    }
+
+    .input-box label{
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      font-size: 1em;
+      color: #fff;
+      pointer-events: none;
+      transition: .3s ease-in-out;
+    }
+    .input-box input:focus~label,.input-box input:valid~label{
+      top: 1px;
+      background: #2b0404;
+      padding: 0 4px;
+      font-size: 14px;
+      color: #ff0000;
+    }
+
+    a{
+      text-decoration: none;
+    }
+    .forgot-pw{
+      margin: -15px 0 10px;
+      text-align: center;
+    }
+    .forgot-pw a{
+      font-size: 14px;
+      color: #fff;
+    }
+    .forgot-pw a:hover{
+      text-decoration: underline;
+    }
+    .btn{
+      width: 100%;
+      height: 45px;
+      background: #ff0000;
+      border-radius: 40px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1em;
+      color: #020301;
+      font-weight: 800;
+    }
+    .signup-link{
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+    .signup-link a{
+      font-size: 1em;
+      color: #b7391d;
+      text-decoration: none;
+      font-weight:600;
+    }
+    .signup-link a:hover{
+      text-decoration: underline;
+      color: #ff2f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+  <div class="login-form">
+    <h2>Login</h2>
+    <form action="#">
+      <div class="input-box">
+        <input type="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-box">
+        <input type="password" required>
+        <label for="password">Password</label>
+      </div>
+      <div class="forgot-pw">
+        <a href="#">Forgot your password</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="signup-link">
+        <a href="#">Signup</a>
+      </div>
+    </form>
+  </div>
+  <span style="--i:0"></span>
+  <span style="--i:1"></span>
+  <span style="--i:2"></span>
+  <span style="--i:3"></span>
+  <span style="--i:4"></span>
+  <span style="--i:5"></span>
+  <span style="--i:6"></span>
+  <span style="--i:7"></span>
+  <span style="--i:8"></span>
+  <span style="--i:9"></span>
+  <span style="--i:10"></span>
+  <span style="--i:11"></span>
+  <span style="--i:12"></span>
+  <span style="--i:13"></span>
+  <span style="--i:14"></span>
+  <span style="--i:15"></span>
+  <span style="--i:16"></span>
+  <span style="--i:17"></span>
+  <span style="--i:18"></span>
+  <span style="--i:19"></span>
+  <span style="--i:20"></span>
+  <span style="--i:21"></span>
+  <span style="--i:22"></span>
+  <span style="--i:23"></span>
+  <span style="--i:24"></span>
+  <span style="--i:25"></span>
+  <span style="--i:26"></span>
+  <span style="--i:27"></span>
+  <span style="--i:28"></span>
+  <span style="--i:29"></span>
+  <span style="--i:30"></span>
+  <span style="--i:31"></span>
+  <span style="--i:32"></span>
+  <span style="--i:33"></span>
+  <span style="--i:34"></span>
+  <span style="--i:35"></span>
+  <span style="--i:36"></span>
+  <span style="--i:37"></span>
+  <span style="--i:38"></span>
+  <span style="--i:39"></span>
+  <span style="--i:40"></span>
+  <span style="--i:41"></span>
+  <span style="--i:42"></span>
+  <span style="--i:43"></span>
+  <span style="--i:44"></span>
+  <span style="--i:45"></span>
+  <span style="--i:46"></span>
+  <span style="--i:47"></span>
+  <span style="--i:48"></span>
+  <span style="--i:49"></span>
+  </div>
+</body>
+
+</html>
