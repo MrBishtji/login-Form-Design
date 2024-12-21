@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <title>Login Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: #000;
+      color: #fff;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .loginform {
+      min-width: 400px;
+      border: 2px solid #7e7b7b;
+      padding: 50px 30px;
+      border-radius: 20px;
+    }
+
+    .loginform:hover {
+      box-shadow: 0px 1px 2px 6px greenyellow;
+      border: none;
+      transition: 0.4s;
+    }
+
+    .loginform h2 {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .loginform:hover h2 {
+      color: greenyellow;
+    }
+
+    .loginform .input-box {
+      border: 2px solid #7e7b7b;
+      padding: 10px;
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      border-radius: 5px;
+    }
+
+    .loginform:hover .input-box {
+      box-shadow: 0px 3px greenyellow;
+      border: none;
+      transition: 0.2s;
+    }
+
+    .input-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 20px;
+      padding-left: 5px;
+      height: 100%;
+    }
+
+    .loginform:hover .input-box .icons {
+      color: greenyellow;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .loginform form p {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .loginform form p a:hover {
+      text-decoration: underline;
+    }
+
+    .loginform button {
+      width: 100%;
+      padding: 10px;
+      background: #666464;
+      font-size: 18px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    .loginform:hover button {
+      color: #000;
+      background: greenyellow;
+    }
+
+    .loginform .forgot {
+      margin: 15px 0;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .loginform .forgot a {
+      color: #666464b9;
+    }
+
+    .loginform .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .loginform:hover .forgot a {
+      color: greenyellow;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="loginform">
+      <form>
+        <h2>Login</h2>
+        <div class="input-box">
+          <ion-icon name="person" class="icons"></ion-icon>
+          <input type="text" placeholder="Username">
+        </div>
+        <div class="input-box">
+          <ion-icon name="lock-closed" class="icons"></ion-icon>
+          <input type="password" placeholder="Password">
+        </div>
+        <p><a href="#">Forgot Password?</a></p>
+        <button type="submit">
+          Login
+        </button>
+      </form>
+      <p class="forgot">Don't have an account? <a href="#">Register</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
