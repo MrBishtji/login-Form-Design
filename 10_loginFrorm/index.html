@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <title>Login Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .loginform {
+      min-width: 400px;
+      border: 4px solid #ffffff;
+      padding: 50px 30px;
+      border-radius: 20px;
+    }
+
+    .loginform:hover {
+      box-shadow: 0px 1px 2px 6px  #626161;
+      border: none;
+      transition: 0.4s;
+    }
+
+    .loginform h2 {
+      text-align: center;
+      font-size: 35px;
+      color: #626162;
+      font-size: 800;
+    }
+
+    .loginform:hover h2 {
+      color: #ffffff;
+    }
+
+    .loginform .input-box {
+      border: 2px solid #626162;
+      padding: 10px;
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      border-radius: 5px;
+    }
+
+    .loginform:hover .input-box {
+      box-shadow: 0px 3px #ffffff;
+      border: none;
+      transition: 0.2s;
+    }
+
+    .input-box input {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      font-size: 20px;
+      padding-left: 5px;
+      height: 100%;
+    }
+
+    .loginform:hover .input-box .icons {
+      color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .loginform form p {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .loginform form p a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    .loginform button {
+      width: 100%;
+      padding: 10px;
+      background: #626162;
+      font-size: 18px;
+      border-radius: 5px;
+      font-weight: 600;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .loginform:hover button {
+      color: #000;
+      background: #ffffff ;
+    }
+
+    .loginform .forgot {
+      margin: 15px 0;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .loginform .forgot a {
+      color:  #ffffff;
+      font-weight: 800;
+    }
+
+    .loginform .forgot a:hover {
+      text-decoration: underline;
+      color: #626162 ;
+    }
+    
+    body {
+      background: #000000;
+      position: relative;
+    }
+
+    .bgcolors {
+      width: 60px;
+      height: 250px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: gray;
+      align-items: center;
+      border-radius: 5px;
+    }
+
+    .bgcolor {
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      right: 5px;
+      margin: 5px;
+      width: 35px;
+      height: 35px;
+    }
+
+    body .active {
+      border: 1px solid white;
+      transform: scale(1.4);
+    }
+
+    .darkblue {
+      top: 5px;
+      background: #015b69;
+    }
+
+    .greenyellow {
+      top: 50px;
+      background: #286d16;
+    }
+
+    .blue {
+      top: 100px;
+      background: #0d0d51;
+    }
+
+    .pink {
+      top: 150px;
+      background: #ffc0cb;
+    }
+
+    .black {
+      top: 200px;
+      background: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bgcolors">
+
+    <div class="bgcolor  darkblue " id="darkblue"></div>
+    <div class="bgcolor greenyellow" id="greenyellow"></div>
+    <div class="bgcolor blue" id="blue"></div>
+    <div class="bgcolor pink" id="pink"></div>
+    <div class="bgcolor  active black " id="black"></div>
+  </div>
+  <div class="wrapper">
+    <div class="loginform">
+      <form>
+        <h2>Login</h2>
+        <div class="input-box">
+          <ion-icon name="person" class="icons"></ion-icon>
+          <input type="text" placeholder="Username">
+        </div>
+        <div class="input-box">
+          <ion-icon name="lock-closed" class="icons"></ion-icon>
+          <input type="password" placeholder="Password">
+        </div>
+        <p><a href="#">Forgot Password?</a></p>
+        <button type="submit">
+          Login
+        </button>
+      </form>
+      <p class="forgot">Don't have an account? <a href="#">Register</a>
+      </p>
+    </div>
+  </div>
+  <script>
+    // Get all the color buttons
+    let colors = document.querySelectorAll(".bgcolor");
+
+    // Function to handle color changes when a color is clicked
+    colors.forEach((e) => {
+      e.addEventListener("click", (clo) => {
+        let body = document.body;
+        let selectedColor = clo.target.id;
+
+        // Change background color of the body
+        if (selectedColor == "darkblue") {
+          body.style.backgroundColor = "#015b69";
+          applyTheme( "#002a3c", "#2abaf780", "#2abaf780","#7ad8f78c","#2abaf780","#333","#002a3c", "#002a3c","#fff","#002a3c");
+        }
+        if (selectedColor == "blue") {
+          body.style.backgroundColor = "#0d0d51";
+          applyTheme("#003cff", "#000330", "#0077ff", "#000330","#00012f","#fff","#003cff","#003cff","#fff","#003cff");
+        }
+        if (selectedColor == "pink") {
+          body.style.backgroundColor = "#ffc0cb";
+          applyTheme("#f403dc", "#2e0030", "#2e0030", "#30002e85","#2e0030","#fff","#f403dc","#f403dc","#000","#e600ff");
+        }
+        if (selectedColor == "black") {
+          body.style.backgroundColor = "#000000";
+          applyTheme("#ffffff", "#626161", "#626162", "#626162","#626162","#fff","#ffffff","#ffffff","#000","#ffffff");
+        }
+        if (selectedColor == "greenyellow") {
+          body.style.backgroundColor = "#286d16";
+          applyTheme("#00ff11", "#104b00", "#104102", "#034103","#042f00","#fff","#00ff11","#21f516","#000","#00ff11");
+        }
+      });
+    });
+
+    // Function to update colors of all relevant elements based on the selected theme
+    function applyTheme(borderColor,boxshadowcolor,textColor, inputborderColor,buttonCol,colors, h2hover, btnbgcolor, btntext, boxsh) {
+      // Update body text color
+      // document.body.style.color = textColor;
+      let h2 = document.querySelector(".loginform h2");
+      let inputBoxes = document.querySelectorAll(".input-box");
+       let button = document.querySelector("button");
+      // Update the login form background and border color
+      let loginform = document.querySelector(".loginform");
+      loginform.style.borderColor = borderColor;
+      loginform.addEventListener("mouseover",function(){
+        loginform.style.boxShadow= `0px 1px 2px 6px ${boxshadowcolor}`
+        h2.style.color=h2hover
+        button.style.backgroundColor=btnbgcolor
+        button.style.color=btntext
+        
+        inputBoxes.forEach(box => {
+          box.style.boxShadow = `0px 3px ${boxsh}`;
+        });
+
+      })
+      loginform.addEventListener("mouseout", function () {
+        loginform.style.boxShadow = "";  // Remove the box-shadow when hover ends
+        h2.style.color = textColor
+              button.style.backgroundColor = buttonCol;
+        button.style.color = colors;
+        inputBoxes.forEach(box => {
+          box.style.boxShadow = "";
+        });
+
+      });
+
+      // Update the color of the login form title (h2)
+      
+      h2.style.color = textColor;
+
+      // Update input box styles
+      
+      inputBoxes.forEach(box => {
+        box.style.borderColor = inputborderColor;
+        // box.style.boxShadow = `0px 3px ${hoverColor}`;
+      });
+
+      // Update button styles
+
+      button.style.backgroundColor = buttonCol;
+      button.style.color = colors;
+
+      // Update the color of icons in input boxes
+      let icons = document.querySelectorAll(".input-box .icons");
+      icons.forEach(icon => {
+        icon.style.color = borderColor;
+      });
+
+      // Update the link color (forgot password)
+      let links = document.querySelectorAll(".loginform form p a");
+      links.forEach(link => {
+        link.style.color = borderColor;
+      });
+
+      // Update the forgotten password link hover color
+      let forgotLink = document.querySelector(".loginform .forgot a");
+      forgotLink.style.color = borderColor;
+    }
+
+    // Function to add the "active" class on clicked color button
+    function call() {
+      colors.forEach(item => item.classList.remove("active"));
+      this.classList.add("active");
+    }
+
+    // Add event listeners for the color buttons
+    colors.forEach((item) => {
+      item.addEventListener("click", call);
+    });
+  </script>
+
+</body>
+
+</html>
