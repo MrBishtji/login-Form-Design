@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #3c3a3a;
+    transition: 0.5s ease;
+  }
+
+  .container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: transparent;
+    border: 4px solid #0ef;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0 45px;
+
+  }
+
+  .login-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .page-box .login-title {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  .login-title h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .login-title p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .page .input-box {
+    position: relative;
+    width: 100%;
+    height: 55px;
+  }
+
+  .input-box input {
+    width: 100%;
+    padding: 0 15px;
+    border: 2px solid #636464;
+    border-radius: 6px;
+    outline: none;
+    height: 100%;
+    background: transparent;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .input-box input:focus,
+  .input-box input:valid {
+    border-color: #0ef;
+  }
+
+  .input-box label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s ease-in-out;
+  }
+
+  .input-box input:focus~label,
+  .input-box input:valid~label {
+    top: 1px;
+    color: #0ef;
+    background: #3c3a3a;
+    left: 12px;
+    padding: 0 3px;
+  }
+
+  .forgot {
+    margin-top: 20px;
+  }
+
+  .forgot a {
+    text-decoration: none;
+    color: #0ef;
+    font-size: 0.9rem;
+  }
+
+  .forgot a:hover {
+    text-decoration: underline;
+  }
+
+  .guest-mode {
+    margin: 40px 0;
+  }
+
+  .guest-mode p {
+    font-size: .9rem;
+    color: #fff;
+  }
+
+  .guest-mode a {
+    text-decoration: none;
+    color: #0ef;
+    font-size: .9rem;
+  }
+
+  .guest-mode a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-box a {
+    color: #0ef;
+    text-decoration: none;
+  }
+
+  .btn-box a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-box button {
+    outline: none;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    background: #0ef;
+    border: 2px solid #0ef;
+    color: #1f293a;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+
+  /* password */
+
+  .page-box .page.email-page {
+    transform: translatex(0px);
+    transition: 0.5s ease-in-out;
+  }
+
+  .page-box.active .page.email-page {
+    transform: translateX(-500px);
+  }
+
+  .page-box .page.password-page {
+    position: absolute;
+    transform: translatex(500px);
+    margin-top: 110px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .page-box.active .page.password-page {
+    transform: translateX(0px);
+  }
+
+  .login-box .page-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-box .page {
+    width: 100%;
+  }
+
+  .forgot.show {
+    margin: 10px 0 70px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .forgot.show label {
+    font-size: 14.5px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .forgot.show label input {
+    accent-color: red;
+    cursor: pointer;
+    margin-right: 3px;
+  }
+
+  .btn-box button:nth-child(1) {
+    background: transparent;
+    color: #0ef;
+  }
+  /* show error in email  */
+   #error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+</style>
+
+<body>
+  <div class="container">
+    <div class="login-box">
+      <form action="#">
+        <div class="page-box">
+          <div class="login-title">
+            <h2 id="page-head">Login</h2>
+            <p id="changeintro">Please login to use the platform</p>
+          </div>
+          <div class="page email-page">
+            <div class="input-box">
+              <input type="email" id="email" required autofocus>
+              <label for="email">Enter your email</label>
+              <p id="error"></p>
+            </div>
+            <div class="forgot">
+              <a href="#">forgot email</a>
+            </div>
+            <div class="guest-mode">
+              <p>Not your computer? Use guest mode to login privately.</p>
+              <a href="#">Learn more</a>
+            </div>
+            <div class="btn-box">
+              <a href="#"> Create account</a>
+              <button class="btn-next">Next</button>
+            </div>
+          </div>
+          <div class="page password-page">
+            <div class="input-box">
+              <input type="password" class="password" required autofocus>
+              <label for="password">Enter your password</label>
+            </div>
+            <div class="forgot show">
+              <a href="#">Forgot password</a>
+              <label>
+                <input type="checkbox" class="checkbox-pass">Show password</label>
+            </div>
+            <div class="btn-box login">
+              <button class="btn-back">back</button>
+              <button class="btn-login" type="submit">Login</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    const pageBox = document.querySelector(".page-box")
+    const nextBtn = document.querySelector(".btn-next")
+    const backBtn = document.querySelector(".btn-back")
+    const showPassword = document.querySelector(".checkbox-pass")
+    const passwordInput = document.querySelector(".password")
+    const emailInp = document.querySelector("#email")
+    const heading = document.querySelector("#page-head")
+    const changepara = document.querySelector("#changeintro")
+
+
+    nextBtn.onclick = (e) => {
+      
+      
+       if (!emailInp.value || !emailInp.validity.valid) {
+        e.preventDefault()
+        const errorMessage = document.querySelector("#error")
+        errorMessage.innerHTML="Please enter a valid email address."
+         setTimeout(() => {
+errorMessage.textContent = ""
+         }, 700)
+      } else {
+        
+        pageBox.classList.add("active")
+        setTimeout(() => passwordInput.focus(), 500)
+        heading.innerHTML = "Welcome"
+        changepara.innerHTML = emailInp.value
+      }
+    }
+    backBtn.onclick = (e) => {
+      e.preventDefault()
+      pageBox.classList.remove("active")
+      heading.innerHTML = "Login"
+      const emailInp = document.querySelector("#email")
+      changepara.innerHTML = "Please login to use the platform";
+      emailInp.focus()
+    }
+
+    showPassword.onclick = () => {
+      if (showPassword.checked) {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    }
+  </script>
+</body>
+
+</html>
