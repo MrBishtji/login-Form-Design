@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <title>Login Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926');
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+    }
+
+    .form-box {
+      overflow: hidden;
+      width: 380px;
+      height: 480px;
+      position: relative;
+      margin: 10% auto;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .button-box {
+      width: 220px;
+      margin: 35px auto;
+      position: relative;
+      box-shadow: 0 0 20px 9px #ff61241f;
+      border-radius: 30px;
+      color: #fff;
+    }
+
+    #login {
+      left: 50px;
+    }
+
+    #register {
+      left: 450px;
+    }
+
+    .toggle-btn {
+      padding: 10px 30px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+      color: #a89c9c;
+      font-weight: 700;
+    }
+
+    #btn {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 110px;
+      height: 100%;
+      background: linear-gradient(to right, #326c9b, #2e2e78);
+      border-radius: 30px;
+      transition: 0.5s;
+    }
+
+    .social-icons {
+      margin: 35px auto;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .icon {
+      border: none;
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      padding: 6px;
+      font-size: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+      background: none;
+      color: #326c9b;
+      box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .icon:hover {
+      border: 1px solid #0e02b6;
+      color: #fefefd;
+      background: #0e02b6;
+      padding: auto;
+    }
+
+    .input-group {
+      top: 160px;
+      position: absolute;
+      width: 280px;
+      transition: 0.5s;
+    }
+
+    .input-box {
+      width: 280px;
+      position: relative;
+      border: 1px solid #a7a3e7;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+
+    }
+
+    .input-box input {
+      border: none;
+      width: 100%;
+      height: 50px;
+      padding: 0 10px;
+      outline: none;
+      background: transparent;
+      color: #050505;
+    }
+
+    .input-box input:focus {
+      border: 2px solid #0000ff;
+      border-radius: 5px;
+
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      font-size: 16px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #030303;
+      transition: 0.3s;
+    }
+
+    .input-box input:focus~label,
+    .input-box input:valid~label {
+      top: 1px;
+      background: #0e02b6;
+      color: #fff;
+      padding: 0 5px;
+      left: 5px;
+      /* Optional to move the label above the input */
+    }
+
+    #login .input-box {
+      margin-bottom: 20px;
+    }
+
+    .sumbit-btn {
+      width: 85%;
+      padding: 10px 30px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      background: linear-gradient(to right, #326c9b, #2e2e78);
+      border: 0;
+      outline: none;
+      color: #fff;
+      border-radius: 30px;
+    }
+
+    .sumbit-btn:hover {
+
+      background: linear-gradient(to left, #326c9b, #2e2e78);
+
+    }
+
+    .checkbox {
+      margin: 20px 0 10px;
+    }
+
+    .checkbox label {
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+      </div>
+      <div class="social-icons">
+        <div class="icon fb">
+          <ion-icon name="logo-facebook" class="miniIcon"></ion-icon>
+        </div>
+        <div class="icon google">
+          <ion-icon name="logo-google" class="miniIco"></ion-icon>
+        </div>
+        <div class="icon mail">
+          <ion-icon name="mail" class="miniIco"></ion-icon>
+        </div>
+      </div>
+      <form id="login" class="input-group">
+        <div class="input-box">
+          <input type="text" name="username" id="username" required>
+          <label for="username">Username</label>
+        </div>
+        <div class="input-box">
+          <input type="password" name="password" id="password" required>
+          <label for="password">Password</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox">Remember Me</label>
+        </div>
+        <button type="submit" class="sumbit-btn">Login</button>
+      </form>
+
+      <form id="register" class="input-group">
+        <div class="input-box">
+          <input type="text" name="username" id="username" required>
+          <label for="username">Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" name="email" id="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" name="password" id="password" required>
+          <label for="password">Password</label>
+        </div>
+        <div class="checkbox">
+
+          <label><input type="checkbox">I agree to the terms & conditions</label>
+        </div>
+        <button type="submit" class="sumbit-btn">Register</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    let loginbtn = document.getElementById("login")
+    let registerbtn = document.getElementById("register")
+    let moveBtn = document.getElementById("btn")
+    function register() {
+      registerbtn.style.left = "50px"
+      loginbtn.style.left = "-450px"
+      moveBtn.style.left = "50%"
+    }
+    function login() {
+      registerbtn.style.left = "450px"
+      loginbtn.style.left = "50px"
+      moveBtn.style.left = "0"
+
+    }
+  </script>
+</body>
+
+</html>
